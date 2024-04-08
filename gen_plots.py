@@ -182,10 +182,13 @@ for row_i in range(len(df2)):
         samples.append([])
         continue
 
+df2['samples'] = samples
+
+
 metadata = []
 pdfs = []
 x_grid = np.linspace(-1.5, 1.5, 1000)
-
+t_degrees_freedom = 10
 
 for discount in [0.2, 0.4, 0.6, 0.8, 1.0]:
     dcurr = df2[df2.ai_truncated_discount==discount]
@@ -261,5 +264,41 @@ print("Disc 0.8: %.3f" % np.mean(df2_disc08.mean_last5_hell))
 ratio = np.mean(df2_disc08.mean_last5_hell)/ np.mean(df2_nodiscount.mean_last5_hell)
 print("ratio no discount to 0.8: %.3f" % ratio)
 # ratio no discount to 0.8: 2.366
+
+
+
+#--------------------------------------------
+# For fun - add animated plot
+#--------------------------------------------
+
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.set_xlim(-1.5, 1.5)
+ax.set_ylim(0, 1.4)
+
+line, = ax.plot(x_grid, pdfs[0], 'blue')
+true_t_line, = ax.plot(x_grid, t.pdf(x_grid, t_degrees_freedom), 'r-', lw=2, label='True t-distr, 10 d.f.')
+
+def update(frame):
+    line.set_ydata(pdfs[frame])
+    ax.legend([line, true_t_line], [metadata[frame], 'True t-distr, 10 d.f.'])
+    
+    return line, true_t_line
+
+num_rounds = len(pdfs)
+
+#frameslist = range(num_rounds)
+frameslist =  [0]*2 + list(range(num_rounds)) + [num_rounds-1]*5
+
+ani = FuncAnimation(fig, update, frames=frameslist, blit=False)  # blit=False for legend update
+
+plt.title('Knowledge Collapse', loc='center', fontsize=12, color='black')#, pad=0)
+plt.text(1, 1.02, 'Andrew Peterson, arXiv 2404.03502', fontsize=8, color='grey', ha='right', transform=ax.transAxes)
+plt.xlabel('KDE estimate of public knowledge')
+plt.ylabel('')
+#plt.show()
 
 
