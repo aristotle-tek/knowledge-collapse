@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this replication code, please cite the article below."
+title: "Replication Code for: AI and the problem of knowledge collapse"
+authors:
+  - family-names: "Peterson"
+    given-names: "Andrew J."
+    orcid: "https://orcid.org/0000-0002-0811-3515"
+date-released: 2025-01-19
+version: "1.0.0"
+doi: "10.1007/s00146-024-02173-x"
+url: "https://doi.org/10.1007/s00146-024-02173-x"
+keywords:
+  - artificial intelligence
+  - knowledge collapse
+  - large language models
+  - innovation
+license: "MIT"
+references:
+  - type: article
+    authors:
+      - family-names: "Peterson"
+        given-names: "Andrew J."
+    title: "AI and the problem of knowledge collapse"
+    journal: "AI & SOCIETY"
+    year: 2025
+    doi: "10.1007/s00146-024-02173-x"
+    url: "https://doi.org/10.1007/s00146-024-02173-x"
