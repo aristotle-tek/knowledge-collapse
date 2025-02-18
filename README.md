@@ -1,6 +1,6 @@
 # Knowledge Collapse
 
-Replication code for "AI and the Problem of Knowledge Collapse"
+Replication code for <a href="https://rdcu.be/d6Qfx" target="_blank">"AI and the Problem of Knowledge Collapse"</a>
 
 ## Simulation Analysis
 

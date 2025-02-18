@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this replication code, please cite the article below."
-title: "Replication Code for: AI and the problem of knowledge collapse"
+title: "Replication Code for: AI and the Problem of Knowledge Collapse"
 authors:
   - family-names: "Peterson"
     given-names: "Andrew J."
@@ -21,7 +21,7 @@ references:
       - family-names: "Peterson"
         given-names: "Andrew J."
     title: "AI and the problem of knowledge collapse"
-    journal: "AI & SOCIETY"
+    journal: "AI & Society"
     year: 2025
     doi: "10.1007/s00146-024-02173-x"
     url: "https://doi.org/10.1007/s00146-024-02173-x"
